@@ -21,7 +21,7 @@ for i in {1..22456}; do
 	if [ $CURLRET -ne 0 ]; then
 		rm -rf *
 		echo " * Failed to download: cURL returned $CURLRET. See output/$i.stderr for more information." | tee -a /dev/fd/$FD
-		break
+		continue
 	fi
 
 	EMLFILE=`ls -1 | head -1`
@@ -31,11 +31,11 @@ for i in {1..22456}; do
 	if [ "${EXT}" != "eml" ]; then
 		rm -rf *
 		echo " * Failed to download: File unavailable, try again." | tee -a /dev/fd/$FD
-		break
+		continue
 	fi
 
 	OUTFILE=`printf "%05d" $i`_$EMLFILE
-	mv "$EMLFILE" "../$OUTFILE"
+	mv -- "$EMLFILE" "../$OUTFILE"
 done
 
 cd ..
