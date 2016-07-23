@@ -23,7 +23,17 @@ for i in {1..22456}; do
 		echo " * Failed to download: cURL returned $CURLRET. See output/$i.stderr for more information." | tee -a /dev/fd/$FD
 		break
 	fi
+
 	EMLFILE=`ls -1 | head -1`
+
+	EXT=${EMLFILE,,}
+	EXT=${EXT##*.}
+	if [ "${EXT}" != "eml" ]; then
+		rm -rf *
+		echo " * Failed to download: File unavailable, try again." | tee -a /dev/fd/$FD
+		break
+	fi
+
 	OUTFILE=`printf "%05d" $i`_$EMLFILE
 	mv "$EMLFILE" "../$OUTFILE"
 done
