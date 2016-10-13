@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# curl -OJL https://wikileaks.org/dnc-emails//get/<id-here>
-# IDs range from [1, 22456]
+# curl -OJL https://wikileaks.org/podesta-emails//get/<id-here>
+# IDs range from [1, 9077]
 
-OUTPUT_FILE="dncdownload.log"
+OUTPUT_FILE="podestadownload.log"
 RETRY_TIMEOUT=1
 RETRY_COUNT=2
 
@@ -25,7 +25,7 @@ while ((i <= 22456)); do
 #for i in {1..22456}; do
 	let i=i+1
 	echo "Downloading $i..." | tee -a $FD_PATH
-	curl -OJL "https://wikileaks.org/dnc-emails//get/$i" > "../../output/$i.stdout" 2> "../../output/$i.stderr"
+	curl -OJL "https://wikileaks.org/podesta-emails//get/$i" > "../../output/$i.stdout" 2> "../../output/$i.stderr"
 	CURLRET=$?
 
 	if [ $CURLRET -ne 0 ]; then
