@@ -1,3 +1,5 @@
+# THIS HAS BEEN DEPRECATED, NEW VERSION IS https://github.com/vs49688/wikileaks-email-downloader
+
 # DNC Email Downloader
 A simple script that downloads all the DNC emails from Wikileaks into their original format, so they can be 
 loaded into an email client for further perusal.
