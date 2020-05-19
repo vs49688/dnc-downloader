@@ -1,7 +1,11 @@
 #!/bin/bash
-
+##
+# SPDX-License-Identifier: CC0-1.0
+#
 # curl -OJL https://wikileaks.org/dnc-emails//get/<id-here>
 # IDs range from [1, 22456]
+#
+##
 
 OUTPUT_FILE="dncdownload.log"
 RETRY_TIMEOUT=1
