@@ -1,3 +1,16 @@
 /eml/
 /output/
 /dncdownload.log
+/clinton-emails
+/dnc-emails
+/podesta-emails
+/dnc
+/podesta
+/clintonurls.json
+/clinton.session.aria2
+/podesta.session.aria2
+/dnc.session.aria2
+/wikileaks.db
+**/.idea/
+**/.vscode/
+**/__pycache__/
